@@ -1,0 +1,20 @@
+extends ../template
+
+block variables
+	- var title = 'Авторизация'
+
+block content
+	.auth
+		.auth-block
+			.auth-block__img
+				img(src="assets/images/auth.jpg", alt="")
+			.auth-block-content
+				//Изначально на странице только поле телефона и кнопка "Получить пароль по SMS", после нажатия на которую появляется поле для кода и текст на кнопке меняется на "Войти в кабинет"
+				h2.h1.title Вход в личный кабинет
+				.auth-block-content-input
+					label(for="") Телефон
+					input(type="text")
+				.auth-block-content-input
+					label(for="") Код подтверждения
+					input(type="text")
+				.auth-block-content__btn.btn-new Войти в кабинет

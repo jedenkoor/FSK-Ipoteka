@@ -1,0 +1,64 @@
+extends ../template
+
+block variables
+	- var title = 'Моя сделка'
+
+block content
+	.lk
+		.container
+			h2.h1.title Моя сделка
+			.lk-deals
+				.lk-deals-row.header-row
+					.lk-deals-row-col Бронирование
+					.lk-deals-row-col Объект
+					.lk-deals-row-col ID объекта
+					.lk-deals-row-col Дата
+					.lk-deals-row-col Оплата
+					.lk-deals-row-col Резерв до
+					.lk-deals-row-col Онлайн покупка
+				.lk-deals-row
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Бронирование
+						span №12345-67
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Объект
+						span 1к квартира - 34.6 м2
+					.lk-deals-row-col
+						.lk-deals-row-col__title ID объекта
+						a.lk-deals-row-col__id(href="#") 
+							span 42 358 
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Дата
+						span 22.05.2020
+					.lk-deals-row-col
+						.lk-deals-row-col__title Оплата
+						.lk-deals-row-col__payment.success 20 000 р.
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Резерв до
+						span 22.05.2020
+					.lk-deals-row-col 
+						a.lk-deals-row-col__btn.btn-new(href="#") Продолжить оформление
+				.lk-deals-row
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Бронирование
+						span №12345-67
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Объект
+						span 1к квартира - 34.6 м2
+					.lk-deals-row-col
+						.lk-deals-row-col__title ID объекта
+						a.lk-deals-row-col__id(href="#") 
+							span 42 358 
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Дата
+						span 22.05.2020
+					.lk-deals-row-col
+						.lk-deals-row-col__title Оплата
+						.lk-deals-row-col__payment.success 20 000 р.
+					.lk-deals-row-col 
+						.lk-deals-row-col__title Резерв до
+						span 22.05.2020
+					.lk-deals-row-col 
+						a.lk-deals-row-col__btn.btn-new(href="#") Продолжить оформление
+
+			.lk-deals__text На данный момент вы забронировали квартиру. Для продолжения сделки вы можете использовать функцию онлайн-покупки. Нажмите “Продолжить оформление” - на следующем экране будет пошаговая инструкция. По любым вопросам вам поможет индивидуальный менеджер. 

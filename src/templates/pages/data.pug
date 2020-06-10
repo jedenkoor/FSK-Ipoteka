@@ -1,0 +1,195 @@
+extends ../template
+
+block variables
+	- var title = 'Мои данные'
+
+block content
+	.lk
+		.container
+			.anketa-content
+				.anketa-content-block.section-margin
+					h2.h1.title Основные данные
+					.anketa-content-block-row
+						//Если убрали фокус и поле осталось пустым (или не прошло валидацию) добавляем класс "input-error" и внутрь добавляем элемент <label class="input-error__label" for="{здесь id инпута}">Не заполнено, или ошибка ввода</label> Не забудь убрать класс и элемент если все правильно заполнили со второго раза 
+						.anketa-content-block-row-input.input-error
+							label(for="name") Имя
+							input(type="text" placeholder="Иван" id="name")
+							label.input-error__label(for="name") Не заполнено, или ошибка ввода
+						.anketa-content-block-row-input
+							label(for="") Отчество
+							input(type="text" placeholder="Иванович")
+						.anketa-content-block-row-input
+							label(for="") Фамилия
+							input(type="text" placeholder="Иванов")
+					.anketa-content-block-row
+						.anketa-content-block-row-input.disabled
+							label(for="") Телефон
+							input(type="text" value="+7 (999) 123-45-67" disabled)
+						.anketa-content-block-row-input
+							label(for="") E-mail
+							input(type="text" placeholder="username@mail.ru")
+
+				.anketa-content-block.section-margin
+					h2.h1.title Паспортные данные
+					.anketa-content-block-row
+						.anketa-content-block-row-input
+							label(for="") Серия
+							input(type="text" placeholder="0000")
+						.anketa-content-block-row-input
+							label(for="") Номер
+							input(type="text" placeholder="000000")
+						.anketa-content-block-row-input
+							label(for="") Дата выдачи
+							input(type="text" placeholder="ДД.ММ.ГГГГ")
+					.anketa-content-block-row
+						.anketa-content-block-row-input.col12
+							label(for="") Выдан
+							input(type="text")
+						.anketa-content-block-row-input
+							label(for="") Код подразделения
+							input(type="text" placeholder="000-000")
+					.anketa-content-block-row
+						.anketa-content-block-row-input
+							label(for="") Гражданство
+							input(type="text")
+						.anketa-content-block-row-input.col23
+							label(for="") Место рождения
+							input(type="text")
+					.anketa-content-block-row
+						.anketa-content-block-row-input.col13
+							label(for="") Зарегистрирован (прописка)
+							input(type="text")
+
+				.anketa-content-block.section-margin
+					h2.h1.title Сканы документов
+					.anketa-content-block-row
+						.anketa-content-block-row-files
+							label(for="") Скан паспорта (все страницы) 
+							.anketa-content-block-row-files-dropzone
+								.anketa-content-block-row-files-dropzone__info
+									<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M46.6977 44.1425V31.1671H49.4043V44.1425C49.4043 47.0423 47.0441 49.4024 44.1444 49.4024H5.85987C2.96011 49.4024 0.6 47.0423 0.6 44.1425V31.1671H3.30658V44.1425C3.30658 45.5509 4.45146 46.6958 5.85987 46.6958H44.1444C45.5528 46.6958 46.6977 45.5509 46.6977 44.1425Z" fill="#E94200" stroke="white" stroke-width="1.2"/>
+										<path d="M23.6569 30.4436V0.6H26.3635V30.4436V31.8921L27.3878 30.8679L34.386 23.8696L36.2998 25.7834L25.0102 37.0731L13.7206 25.7834L15.6344 23.8696L22.6327 30.8679L23.6569 31.8921V30.4436Z" fill="#E94200" stroke="white" stroke-width="1.2"/>
+									</svg>
+									| Просто перетяните файлы</br>в эту область или нажмите для загрузки
+								.anketa-content-block-row-files-dropzone-list
+									// При клике на заголовок "Загруженнные файлы", блоку с классом ".anketa-content-block-row-files-dropzone-list" необходимо добавить класс "active". Максимум 12 загруженных файлов
+									.anketa-content-block-row-files-dropzone-list__title 
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M16.5938 11.0039V15.8906C16.5938 16.2783 16.2783 16.5938 15.8906 16.5938H2.10938C1.72167 16.5938 1.40625 16.2783 1.40625 15.8906V11.0039H0V15.8906C0 17.0537 0.946266 18 2.10938 18H15.8906C17.0537 18 18 17.0537 18 15.8906V11.0039H16.5938Z" fill="#BEBEBE"/>
+											<path d="M12.3762 8.28689L9.70432 10.9588V0H8.29807V10.9588L5.6262 8.28689L4.63184 9.28125L9.0012 13.6506L13.3706 9.28125L12.3762 8.28689Z" fill="#BEBEBE"/>
+										</svg>
+										| Загруженнные файлы
+									.anketa-content-block-row-files-dropzone-list-items
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан_паспорта.pdf
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+
+						.anketa-content-block-row-files
+							label(for="") Скан ИНН
+							.anketa-content-block-row-files-dropzone
+								.anketa-content-block-row-files-dropzone__info
+									<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M46.6977 44.1425V31.1671H49.4043V44.1425C49.4043 47.0423 47.0441 49.4024 44.1444 49.4024H5.85987C2.96011 49.4024 0.6 47.0423 0.6 44.1425V31.1671H3.30658V44.1425C3.30658 45.5509 4.45146 46.6958 5.85987 46.6958H44.1444C45.5528 46.6958 46.6977 45.5509 46.6977 44.1425Z" fill="#E94200" stroke="white" stroke-width="1.2"/>
+										<path d="M23.6569 30.4436V0.6H26.3635V30.4436V31.8921L27.3878 30.8679L34.386 23.8696L36.2998 25.7834L25.0102 37.0731L13.7206 25.7834L15.6344 23.8696L22.6327 30.8679L23.6569 31.8921V30.4436Z" fill="#E94200" stroke="white" stroke-width="1.2"/>
+									</svg>
+									| Просто перетяните файлы</br>в эту область или нажмите для загрузки
+								.anketa-content-block-row-files-dropzone-list
+									.anketa-content-block-row-files-dropzone-list__title 
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M16.5938 11.0039V15.8906C16.5938 16.2783 16.2783 16.5938 15.8906 16.5938H2.10938C1.72167 16.5938 1.40625 16.2783 1.40625 15.8906V11.0039H0V15.8906C0 17.0537 0.946266 18 2.10938 18H15.8906C17.0537 18 18 17.0537 18 15.8906V11.0039H16.5938Z" fill="#BEBEBE"/>
+											<path d="M12.3762 8.28689L9.70432 10.9588V0H8.29807V10.9588L5.6262 8.28689L4.63184 9.28125L9.0012 13.6506L13.3706 9.28125L12.3762 8.28689Z" fill="#BEBEBE"/>
+										</svg>
+										| Загруженнные файлы
+									.anketa-content-block-row-files-dropzone-list-items
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан_паспорта.pdf
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+						
+						.anketa-content-block-row-files
+							label(for="") Скан СНИЛС
+							.anketa-content-block-row-files-dropzone
+								.anketa-content-block-row-files-dropzone__info
+									<svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M46.6977 44.1425V31.1671H49.4043V44.1425C49.4043 47.0423 47.0441 49.4024 44.1444 49.4024H5.85987C2.96011 49.4024 0.6 47.0423 0.6 44.1425V31.1671H3.30658V44.1425C3.30658 45.5509 4.45146 46.6958 5.85987 46.6958H44.1444C45.5528 46.6958 46.6977 45.5509 46.6977 44.1425Z" fill="#E94200" stroke="white" stroke-width="1.2"/>
+										<path d="M23.6569 30.4436V0.6H26.3635V30.4436V31.8921L27.3878 30.8679L34.386 23.8696L36.2998 25.7834L25.0102 37.0731L13.7206 25.7834L15.6344 23.8696L22.6327 30.8679L23.6569 31.8921V30.4436Z" fill="#E94200" stroke="white" stroke-width="1.2"/>
+									</svg>
+									| Просто перетяните файлы</br>в эту область или нажмите для загрузки
+								.anketa-content-block-row-files-dropzone-list.active
+									.anketa-content-block-row-files-dropzone-list__title 
+										<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M16.5938 11.0039V15.8906C16.5938 16.2783 16.2783 16.5938 15.8906 16.5938H2.10938C1.72167 16.5938 1.40625 16.2783 1.40625 15.8906V11.0039H0V15.8906C0 17.0537 0.946266 18 2.10938 18H15.8906C17.0537 18 18 17.0537 18 15.8906V11.0039H16.5938Z" fill="#BEBEBE"/>
+											<path d="M12.3762 8.28689L9.70432 10.9588V0H8.29807V10.9588L5.6262 8.28689L4.63184 9.28125L9.0012 13.6506L13.3706 9.28125L12.3762 8.28689Z" fill="#BEBEBE"/>
+										</svg>
+										| Загруженнные файлы
+									.anketa-content-block-row-files-dropzone-list-items
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан трудовой книжки(1).jpg
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+										.anketa-content-block-row-files-dropzone-list-items__item
+											| Скан_паспорта.pdf
+											<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M3.65234 10.9554L10.9557 3.65213" stroke="#E94200" stroke-linecap="round"/>
+												<path d="M3.65234 3.65167L10.9557 10.955" stroke="#E94200" stroke-linecap="round"/>
+											</svg>
+
+				.anketa-content-block.section-margin
+					.anketa-content-block-row
+						.anketa-content-block-row__btn.btn-new Сохранить данные
