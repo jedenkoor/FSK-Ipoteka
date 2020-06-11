@@ -1,7 +1,7 @@
 extends ../template
 
 block variables
-	- var title = 'Анкета покупки 100% оплаты'
+	- var title = 'Анкета покупки 100% оплата'
 
 block content
 	.grey-block
@@ -294,11 +294,11 @@ block content
 
 				.anketa-content-block.section-margin
 					.anketa-content-block-row
-						.anketa-content-block-row__add 
+						.anketa-content-block-row__add.btn-new
 							<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<circle cx="9" cy="9" r="8.5" stroke="#E94200"/>
 								<path d="M9.16406 13.3242V4.99611" stroke="#E94200" stroke-linecap="round"/>
 								<path d="M5 9.16016L13.3281 9.16016" stroke="#E94200" stroke-linecap="round"/>
 							</svg>
 							| Добавить собственника
-						.anketa-content-block-row__btn.btn-new Сформировать договор
+						a.anketa-content-block-row__btn.btn-new.btn--bg Сформировать договор

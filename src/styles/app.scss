@@ -1,4 +1,5 @@
 @import 'common/normalize';
+@import 'common/adaptive';
 
 :root {
 	--text-color: #000;
@@ -70,18 +71,12 @@ body{
   }
 }
 
-@import 'common/adaptive';
-@import 'common/fonts';
-@import 'common/header';
-@import 'pages/index';
-@import 'pages/anketa';
-@import 'pages/auth';
-@import 'pages/lk';
-
 .btn-new{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: all 0.1s linear;
+	font-weight: normal;
 	> svg{
 		margin-right: 8px;
 	}
@@ -109,6 +104,12 @@ body{
 		transition: all 0.1s linear;
 	}
 }
+.btn--bg{
+	background-color: var(--accent-color);
+	border-color: var(--accent-color);
+	color: #fff;
+	border-radius: 3px;
+}
 @include hover{
 	.btn--transp:hover{
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -120,6 +121,9 @@ body{
 			fill: #fff;
 			stroke: #fff;
 		}
+	}
+	.btn--bg:hover {
+    box-shadow: 0 5px 10px rgba(233, 66, 0, 0.4);
 	}
 }
 .section-margin + .section-margin{
@@ -165,3 +169,12 @@ h1, h2, h3, h4, h5, h6{
 		margin-top: 40px;
 	}
 }
+
+@import 'common/fonts';
+@import 'common/header';
+@import 'pages/index';
+@import 'pages/anketa';
+@import 'pages/auth';
+@import 'pages/lk';
+@import 'pages/info';
+

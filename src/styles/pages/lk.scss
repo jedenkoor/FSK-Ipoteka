@@ -41,9 +41,6 @@
 						margin-right: 17px;
 					}
 				}
-				&__text{
-
-				}
 				&__btn{
 					height: 50px;
 					margin-top: auto;
@@ -123,17 +120,6 @@
 				&__btn{
 					height: 40px;
 					width: 100%;
-					background: #E94200;
-					border-radius: 3px;
-					font-weight: normal;
-					color: #FFFFFF;
-					cursor: pointer;
-					transition: all 0.1s linear;
-					@include hover{
-						&:hover{
-							box-shadow: 0 5px 10px rgba(233, 66, 0, 0.4);
-						}
-					}
 				}
 			}
 		}

@@ -17,4 +17,17 @@ block content
 				.auth-block-content-input
 					label(for="") Код подтверждения
 					input(type="text")
-				.auth-block-content__btn.btn-new Войти в кабинет
+					//Добавляй класс "disabled", после нажатия, через 1 минуту убирай этот класс
+					.confirm-code-repeat
+						<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="12.5" cy="12.5" r="12.5" fill="#E94200"/>
+							<g clip-path="url(#clip0)">
+							<path d="M12.9165 6.70924V4.1665L9.28398 7.79898L12.9165 11.4315V8.16223C15.3139 8.16223 17.2754 10.1238 17.2754 12.5212C17.2754 14.9186 15.3139 16.8802 12.9165 16.8802C10.519 16.8802 8.55748 14.9186 8.55748 12.5212H7.10449C7.10449 15.7178 9.71988 18.3332 12.9165 18.3332C16.113 18.3332 18.7284 15.7178 18.7284 12.5212C18.7284 9.32462 16.113 6.70924 12.9165 6.70924Z" fill="white"/>
+							</g>
+							<defs>
+							<clipPath id="clip0">
+							<rect width="14.1667" height="14.1667" fill="white" transform="translate(5.8335 4.1665)"/>
+							</clipPath>
+							</defs>
+						</svg>
+				a.auth-block-content__btn.btn-new.btn--bg(href="#") Войти в кабинет

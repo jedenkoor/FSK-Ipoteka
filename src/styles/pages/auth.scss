@@ -23,6 +23,21 @@
 			padding: 40px 50px;
 			&-input{
 				margin-bottom: 27px;
+				position: relative;
+				.confirm-code-repeat{
+					position: absolute;
+					z-index: 3;
+					right: 15px;
+					bottom: 12px;
+					cursor: pointer;
+					display: flex;
+				}
+				.confirm-code-repeat.disabled{
+					pointer-events: none;
+					svg circle{
+						fill: #BEBEBE
+					}
+				}
 				label{
 					display: block;
 					font-weight: 300;
@@ -55,17 +70,6 @@
 			&__btn{
 				width: 100%;
 				height: 50px;
-				background: #E94200;
-				border-radius: 3px;
-				color: #FFFFFF;
-				font-weight: normal;
-				cursor: pointer;
-				transition: all 0.1s linear;
-				@include hover{
-					&:hover{
-						box-shadow: 0 5px 10px rgba(233, 66, 0, 0.4);
-					}
-				}
 			}
 		}
 	}
