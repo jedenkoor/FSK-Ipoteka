@@ -145,6 +145,37 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				&.many-row{
+					display: block;
+					padding: 0;
+				}
+				&-row{
+					display: flex;
+					align-items: center;
+					padding: 18px 22px;
+					transition: .3s;
+					@include hover{
+						&:hover{
+							box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+							svg{
+								filter: none
+							}
+						}
+					}
+					&+&{
+						border-top: 1px dashed #E5E8E8;
+					}
+					&:first-child{
+						svg{
+							filter: none;
+						}
+					}
+					svg{
+						width: 36px;
+						transition: .3s;
+						filter: grayscale(1);
+					}
+				}
 				&+.anketa-content-block-row-files{
 					margin-top: 25px;
 				}
